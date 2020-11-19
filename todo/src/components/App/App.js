@@ -3,31 +3,28 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
-const todoItem = 'Написать новое приложение';
+const items = [{
+  id: 1,
+  isDone: true,
+  value: 'Работа'
+},{
+  id: 2,
+  isDone: false,
+  value: 'Приготовление ужина'
+},{
+  id: 3,
+  isDone: true,
+  value: 'Чтение книги'
+}];
 
-const App = () => {
-  const items = [
-  {
-    value: 'Написать новое приложение',
-    isDone: true
-  },
-  {
-    value: 'Прописать props-ы',
-    isDone: false
-  },
-  {
-    value: 'Сделать все дела',
-    isDone: true
+const itemNumber = items.length;
 
-  }
-  ];
-  return (
-  <div className={styles.wrap}>
-    <h1 className={styles.title}>Важные дела:</h1>
-    <InputItem />
-    <ItemList items={items} />
-    <Footer count={3} />
-  </div>);
-}
+const App = () => (<div className={styles.wrap}>
+  <h1 className={styles.title}>TODOs</h1>
+  <InputItem />
+  <ItemList items={items}/>
+  <Footer itemNumber={itemNumber}/>
+  </div>
+);
 
 export default App;
