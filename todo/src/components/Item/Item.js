@@ -7,13 +7,14 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
-const Item = ({item, isDone, id}) => (
+const Item = ({item, isDone, id, onClickDone}) => (
   <ListItem>
   <ListItemIcon>
     <Checkbox
       edge="start"
       checked={isDone}
       tabIndex={-1}
+      onClick={() => onClickDone(isDone)}
       disableRipple
     />
   </ListItemIcon>
