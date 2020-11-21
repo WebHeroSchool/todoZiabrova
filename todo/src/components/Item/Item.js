@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './Item.module.css';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -14,8 +15,8 @@ const Item = ({item, isDone, id, onClickDone}) => (
       edge="start"
       checked={isDone}
       tabIndex={-1}
-      onClick={() => onClickDone(isDone)}
       disableRipple
+      onClick={() => onClickDone(id)}
     />
   </ListItemIcon>
   <ListItemText id={id} primary={item} />
