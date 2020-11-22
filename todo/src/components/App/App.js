@@ -30,6 +30,7 @@ class App extends React.Component {
       if (item.id === id) {
         newItem.isDone = !item.isDone;
       }
+
       return newItem;
     });
 

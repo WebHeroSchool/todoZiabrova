@@ -1,7 +1,12 @@
+.wrap {
+  display: flex;
+}
+
 .item {
   color: #333;
 }
   
 .done {
-  color: #bdb8b8;
+  color: #aaaaaa;
+  text-decoration: line-through;
 }
