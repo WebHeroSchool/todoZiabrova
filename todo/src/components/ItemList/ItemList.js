@@ -3,7 +3,7 @@ import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 import classnames from 'classnames';
 
-const ItemList = ({items, onClickDone}) => (<ul className ={
+const ItemList = ({items, onClickDone, onClickDelete}) => (<ul className ={
   classnames ({
     [styles.list]: true
   })
@@ -15,6 +15,7 @@ const ItemList = ({items, onClickDone}) => (<ul className ={
   isDone={item.isDone}
   id={item.id}
   onClickDone={onClickDone}
+  onClickDelete={onClickDelete}
   />
 )}
 </ul>

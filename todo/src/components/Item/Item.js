@@ -9,7 +9,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import classnames from 'classnames';
 
-const Item = ({item, isDone, id, onClickDone}) => (
+const Item = ({item, isDone, id, onClickDone, onClickDelete}) => (
   <ListItem>
   <ListItemIcon className={styles.wrap}>
     <Checkbox
@@ -27,7 +27,11 @@ const Item = ({item, isDone, id, onClickDone}) => (
     })
     }id={id} primary={item} />
   <ListItemSecondaryAction>
-    <IconButton className={styles.button} edge="end" aria-label="comments">
+    <IconButton 
+    className={styles.button} 
+    edge="end" 
+    aria-label="comments"
+    onClick = {() =>onClickDelete(id)}>
       <DeleteIcon />
     </IconButton>
   </ListItemSecondaryAction>
