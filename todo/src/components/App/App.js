@@ -21,7 +21,8 @@ class App extends React.Component {
         id: 3,
         isDone: true,
         value: 'Чтение книги'
-      }],
+      }
+    ]
   };
 
   onClickDone = id => {
@@ -37,17 +38,27 @@ class App extends React.Component {
     this.setState({items: newItemList});
   };
 
-  onClickDelete = id => {
-    const newItemList = this.state.items.filter(item => item.id !== id);
+  onClickDelete = id => this.setState(state => ({
+    items: state.items.filter(item => item.id !== id)
+ }));
 
-    this.setState({items: newItemList});
-  };
+ onClickAdd = value => this.setState(state => ({
+   items: [
+     ...state.items,
+     {
+       value: value,
+       isDone: false,
+       id: state.count + 1
+     }
+   ],
+   count: state.count + 1
+ }));
 
   render() {
     return  (
       <div className={styles.wrap}>
       <h1 className={styles.title}>TODOs</h1>
-      <InputItem />
+      <InputItem onClickAdd={this.onClickAdd} />
       <ItemList 
         items={this.state.items} 
         onClickDone={this.onClickDone}

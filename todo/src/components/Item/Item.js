@@ -31,8 +31,10 @@ const Item = ({item, isDone, id, onClickDone, onClickDelete}) => (
     className={styles.button} 
     edge="end" 
     aria-label="comments"
-    onClick = {() =>onClickDelete(id)}>
-      <DeleteIcon />
+    >
+      <DeleteIcon
+      onClick = {() =>onClickDelete(id)}
+      />
     </IconButton>
   </ListItemSecondaryAction>
 </ListItem>

@@ -6,7 +6,11 @@ import styles from './Footer.module.css';
 const Footer = ({itemNumber}) => (<footer>
   <label className={styles.itemNumber}>Осталось выполнить {itemNumber} задания</label>
   <div className={styles.filters}>
-  <ButtonGroup className={styles.filter} size="small" variant="text" aria-label="small text primary button group">
+  <ButtonGroup 
+  className={styles.filter} 
+  size="small" 
+  variant="text" 
+  aria-label="small text primary button group">
   <Button>Все</Button>
   <Button>Активные</Button>
   <Button>Выполненные</Button>
