@@ -4,7 +4,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import styles from './Footer.module.css';
 
 const Footer = ({itemNumber}) => (<footer>
-  <label className={styles.itemNumber}>Осталось выполнить {itemNumber} задания</label>
+  <label className={styles.itemNumber}>Осталось выполнить {itemNumber} заданий</label>
   <div className={styles.filters}>
   <ButtonGroup 
   className={styles.filter} 
@@ -17,5 +17,7 @@ const Footer = ({itemNumber}) => (<footer>
   </ButtonGroup>
   </div>
   </footer>);
+
+  Footer.defaultProps = { itemNumber : 0 }
 
   export default Footer;
