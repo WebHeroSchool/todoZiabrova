@@ -10,34 +10,40 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import classnames from 'classnames';
 
 const Item = ({item, isDone, id, onClickDone, onClickDelete}) => (
-  <ListItem>
-  <ListItemIcon className={styles.wrap}>
-    <Checkbox
-      edge="start"
-      checked={isDone}
-      tabIndex={-1}
-      disableRipple
-      onClick={() => onClickDone(id)}
-    />
-  </ListItemIcon>
-  <ListItemText className={
-    classnames({
-      [styles.item]: true,
-      [styles.done]: isDone
-    })
-    }id={id} primary={item} />
-  <ListItemSecondaryAction>
-    <IconButton 
-    className={styles.button} 
-    edge="end" 
-    aria-label="comments"
-    >
+    <ListItem>
+      <ListItemIcon className={styles.wrap}>
+        <Checkbox
+          edge="start"
+          checked={isDone}
+          tabIndex={-1}
+          disableRipple
+          onClick={() => onClickDone(id)}
+        />
+      </ListItemIcon>
+      <ListItemText className={
+        classnames({
+          [styles.item]: true,
+          [styles.done]: isDone
+        })
+      }
+        id={id}
+        primary={item} />
+    <ListItemSecondaryAction>
+      <IconButton 
+        className={styles.button} 
+        edge="end" 
+        aria-label="comments"
+      >
       <DeleteIcon
-      onClick = {() =>onClickDelete(id)}
+        onClick = {() =>onClickDelete(id)}
       />
     </IconButton>
   </ListItemSecondaryAction>
 </ListItem>
-);
+  );
+
+Item.defaultProps = {
+  isDone: false
+};
 
 export default Item;
