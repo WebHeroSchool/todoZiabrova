@@ -2,6 +2,7 @@ import React from 'react';
 import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 const ItemList = ({items, onClickDone, onClickDelete}) => (<ul className ={
   classnames ({
@@ -20,5 +21,11 @@ const ItemList = ({items, onClickDone, onClickDelete}) => (<ul className ={
 )}
 </ul>
 );
+
+ItemList.propTypes = {
+  item: PropTypes.array.isRequired,
+  onClickDone: PropTypes.func.isRequired,
+  onClickDelete: PropTypes.func.isRequired
+};
 
 export default ItemList;

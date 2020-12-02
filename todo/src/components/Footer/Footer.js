@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import styles from './Footer.module.css';
+import PropTypes from 'prop-types';
 
 const Footer = ({itemNumber}) => (<footer>
   <label className={styles.itemNumber}>Осталось выполнить {itemNumber} заданий</label>
@@ -18,6 +19,8 @@ const Footer = ({itemNumber}) => (<footer>
   </div>
   </footer>);
 
-  Footer.defaultProps = { itemNumber : 0 }
+  Footer.propTypes = {
+    itemNumber: PropTypes.number.isRequired
+  };
 
   export default Footer;

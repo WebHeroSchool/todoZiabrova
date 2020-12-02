@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 const Item = ({item, isDone, id, onClickDone, onClickDelete}) => (
     <ListItem>
@@ -42,8 +43,12 @@ const Item = ({item, isDone, id, onClickDone, onClickDelete}) => (
 </ListItem>
   );
 
-Item.defaultProps = {
-  isDone: false
+Item.propTypes = {
+  value: PropTypes.string.isRequired,
+  isDone: PropTypes.bool.isRequired,
+  onClickDone: PropTypes.func.isRequired,
+  onClickDelete: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired
 };
 
 export default Item;
