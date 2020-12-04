@@ -10,8 +10,24 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Item = ({item, isDone, id, onClickDone, onClickDelete}) => (
-    <ListItem>
+class Item extends React.Component {
+  componentDidMount() {
+    console.log('componentDidMount')
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate')
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount')
+  }
+
+  render() {
+    const {item, isDone, id, onClickDone, onClickDelete} = this.props;
+    
+    return (
+      <ListItem>
       <ListItemIcon className={styles.wrap}>
         <Checkbox
           edge="start"
@@ -41,7 +57,9 @@ const Item = ({item, isDone, id, onClickDone, onClickDelete}) => (
     </IconButton>
   </ListItemSecondaryAction>
 </ListItem>
-  );
+    );
+  }
+}
 
 Item.propTypes = {
   value: PropTypes.string.isRequired,

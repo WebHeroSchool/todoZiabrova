@@ -8,22 +8,37 @@ class App extends React.Component {
   state = {
     items: [
       {
-        id: 1,
-        isDone: true,
+        id: this.createId(),
+        isDone: false,
         value: 'Работа'
       },
       {
-        id: 2,
+        id: this.createId(),
         isDone: false,
         value: 'Приготовление ужина'
       },
       {
-        id: 3,
-        isDone: true,
+        id: this.createId(),
+        isDone: false,
         value: 'Чтение книги'
       }
     ]
   };
+
+  createId() {
+    return `${Math.random().toString(36).substr(2,9)}`
+  };
+
+  onClickAdd = value => this.setState(state => ({
+    items: [
+      ...state.items,
+      {
+        value: value,
+        isDone: false,
+        id: this.createId()
+      }
+    ]
+  }));
 
   onClickDone = id => {
     const newItemList = this.state.items.map(item => {
@@ -40,18 +55,6 @@ class App extends React.Component {
 
   onClickDelete = id => this.setState(state => ({
     items: state.items.filter(item => item.id !== id)
- }));
-
- onClickAdd = value => this.setState(state => ({
-   items: [
-     ...state.items,
-     {
-       value: value,
-       isDone: false,
-       id: state.count + 1
-     }
-   ],
-   count: state.count + 1
  }));
 
   render() {
