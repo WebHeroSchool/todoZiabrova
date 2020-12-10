@@ -1,76 +1,77 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
-class App extends React.Component {
-  state = {
-    items: [
+const App = () => {
+
+  const createId = () => {
+    return `${Math.random().toString(36).substr(2,9)}`
+  };
+
+  const [items, setItems] = useState(
+    [
       {
-        id: this.createId(),
+        id: createId(),
         isDone: false,
         value: 'Работа'
       },
       {
-        id: this.createId(),
+        id: createId(),
         isDone: false,
         value: 'Приготовление ужина'
       },
       {
-        id: this.createId(),
+        id: createId(),
         isDone: false,
         value: 'Чтение книги'
       }
     ]
-  };
+  );
 
-  createId() {
-    return `${Math.random().toString(36).substr(2,9)}`
-  };
+  useEffect(() => {console.log('componentDidMount')}, []);
+  useEffect(() => {console.log('componentDidUpdate')}, [items]);
 
-  onClickAdd = value => this.setState(state => ({
-    items: [
-      ...state.items,
+  const onClickAdd = value => {
+    const newItemList = [...items,
       {
-        value: value,
+        id: createId(),
         isDone: false,
-        id: this.createId()
+        value: value
       }
-    ]
-  }));
+    ];
+    setItems(newItemList);
+  };
 
-  onClickDone = id => {
-    const newItemList = this.state.items.map(item => {
-      const newItem = { ...item };
+  const onClickDone = id => {
+    const newItemList = items.map(item => {
+      const newItem = {...item };
       if (item.id === id) {
         newItem.isDone = !item.isDone;
       }
-
       return newItem;
     });
-
-    this.setState({items: newItemList});
+    setItems(newItemList);
   };
 
-  onClickDelete = id => this.setState(state => ({
-    items: state.items.filter(item => item.id !== id)
- }));
+  const onClickDelete = id => {
+    const newItemList = items.filter(item => item.id !== id);
+    setItems(newItemList);
+  };
 
-  render() {
-    return  (
-      <div className={styles.wrap}>
-      <h1 className={styles.title}>TODOs</h1>
-      <InputItem onClickAdd={this.onClickAdd} />
-      <ItemList 
-        items={this.state.items} 
-        onClickDone={this.onClickDone}
-        onClickDelete={this.onClickDelete} 
-        />
-      <Footer itemNumber ={this.state.items.length} />
-      </div>
-    );
-  }
+  return  (
+    <div className={styles.wrap}>
+    <h1 className={styles.title}>TODOs</h1>
+    <InputItem onClickAdd={onClickAdd} />
+    <ItemList 
+      items={items} 
+      onClickDone={onClickDone}
+      onClickDelete={onClickDelete} 
+      />
+    <Footer itemNumber ={items.length} />
+    </div>
+  );
 }
 
 export default App;
