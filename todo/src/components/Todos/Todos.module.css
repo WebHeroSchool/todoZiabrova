@@ -1,0 +1,11 @@
+.wrap {
+    display: inline-block;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 500px;
+  }
+  
+  .title {
+    font-family: Helvetica;
+    text-align: center;
+  }
