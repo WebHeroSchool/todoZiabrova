@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Card from '@material-ui/core/Card';
 import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -7,6 +7,7 @@ import AboutMe from '../AboutMe/AboutMe';
 import Contacts from '../Contacts/Contacts';
 import Todos from '../Todos/Todos';
 import styles from './App.module.css';
+// import logo from '';
 
 const App = () => {
 
@@ -14,7 +15,7 @@ const App = () => {
     <BrowserRouter>
       <div className={styles.wrap}>
         <Card className={styles.sidebar}>
-          <MenuList style={{display: 'inline-block', verticalAlign: 'top'}}>
+          <MenuList style={{display: 'inline-block', width: '100%', verticalAlign: 'top'}}>
             <Link to='/' className={styles.link}>
               <MenuItem style={{fontSize: '18px'}}>
                 Дела
@@ -31,6 +32,10 @@ const App = () => {
               </MenuItem>
             </Link>
           </MenuList>
+          <div className={styles.footer}>
+            <p className={styles.text}>created in</p>
+            <img className={styles.img} src={'/images/logo.png'} alt='school' />
+          </div>
         </Card>
 
         <Card className={styles.content}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './Item.module.css';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -10,59 +10,76 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-class Item extends React.Component {
-  /*componentDidMount() {
-    this.timerID = setInterval(() => console.log('interval'), 1000)
-  }
+const Item = ({
+  value, items, isDone, id, onClickDone, onClickDelete, onDoubleClickEdit,
+  onBlurSave, index, provided, innerRef  }) => {
 
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }*/
+  const initialState = {
+    items: {
+       value: value
+     }
+   };
 
-  render() {
-    const {item, isDone, id, onClickDone, onClickDelete} = this.props;
-    
-    return (
-      <ListItem>
-      <ListItemIcon className={styles.wrap}>
-        <Checkbox
+  const [input, setInput] = useState(initialState.items);
+
+  return (
+      <ListItem
+      className={styles.line}
+      ref={innerRef}
+      {...provided.draggableProps}
+      {...provided.dragHandleProps}>
+        <ListItemIcon>
+          <Checkbox
           edge="start"
           checked={isDone}
           tabIndex={-1}
           disableRipple
-          onClick={() => onClickDone(id)}
-        />
-      </ListItemIcon>
-      <ListItemText className={
-        classnames({
-          [styles.item]: true,
-          [styles.done]: isDone
-        })
-      }
-        id={id}
-        primary={item} />
-    <ListItemSecondaryAction>
-      <IconButton 
-        className={styles.button} 
-        edge="end" 
-        aria-label="comments"
-      >
-      <DeleteIcon
-        onClick = {() =>onClickDelete(id)}
-      />
-    </IconButton>
-  </ListItemSecondaryAction>
-</ListItem>
-    );
-  }
+          onClick = {() => onClickDone(id)}
+          />
+        </ListItemIcon>
+          <div
+            id="standard-full-width"
+            style={{ margin: 8, width: 0 }}
+            margin="normal"
+            InputLabelProps={{shrink: true,}}
+            className={styles.input}
+            value={input.value}
+            onChange={
+              event => {
+                setInput({
+                  value: event.target.value
+                });
+              }
+            }
+            onBlur={ () => onBlurSave(id, input.value, isDone) }
+            onKeyPress = {
+              (event) => {
+                if (event.key === 'Enter') {
+                  onBlurSave(id, input.value, isDone)
+                }
+              }
+            }
+          />
+          <ListItemText
+            className={styles.text}
+            primary={value}
+            onDoubleClick = { () => onDoubleClickEdit(id) }
+          />
+        <ListItemSecondaryAction>
+          <IconButton
+          edge="end"
+          aria-label="comments"
+          onClick = {() => onClickDelete(id)}>
+            <DeleteIcon />
+          </IconButton>
+        </ListItemSecondaryAction>
+      </ListItem>
+  );
 }
 
 Item.propTypes = {
-  value: PropTypes.string.isRequired,
-  isDone: PropTypes.bool.isRequired,
-  onClickDone: PropTypes.func.isRequired,
-  onClickDelete: PropTypes.func.isRequired,
-  id: PropTypes.number.isRequired
+  deal: PropTypes.string,
+  isDone: PropTypes.bool
 };
 
 export default Item;
