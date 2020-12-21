@@ -9,30 +9,23 @@ const Contacts = () => {
       <header>
         <h1 className={styles.title}>Контакты</h1>
         <h3 className={styles.subtitle}>Зяброва Ольга Алексеевна</h3>
+        <h4 className={styles.decs}>Frontend-developer</h4>
       </header>
       <span className={styles.label}>
-        <img src={'/images/phone-call.png'} alt='phone' className={styles.img}/>
+        <img src={'/images/phone-call.svg'} alt='phone' className={styles.img}/>
         <address className={styles.address}>  +7(902)929-05-47</address>
       </span>
       <span className={styles.label}>
-        <img src={'/images/yandex.png'} alt='yandex' className={styles.img}/>
+        <img src={'/images/envelope.svg'} alt='mail' className={styles.img}/>
         <address className={styles.address}>  olgazyabrova@yandex.ru</address>
       </span>
       <span className={styles.label}>
-        <img src={'/images/city-map-colored.png'} alt='city' className={styles.img}/>
+        <img src={'/images/placeholder.svg'} alt='city' className={styles.img}/>
         <address className={styles.address}>  г.Красноярск</address>
       </span>
       <span className={styles.label}>
-        <img src={'/images/vk.png'} alt='vk' className={styles.img}/>
-        <address className={styles.address}>
-          <a href='https://vk.com/olga_zyabrova'> https://https://vk.com/olga_zyabrova</a>
-        </address>
-      </span>
-      <span className={styles.label}>
-        <img src={'/images/instagram.png'} alt='insta' className={styles.img}/>
-        <address className={styles.address}>
-          <a href='https://www.instagram.com/ziabrovaaa/'> https://www.instagram.com/ziabrovaaa/</a>
-        </address>
+        <img src={'/images/paper-plane.svg'} alt='tg' className={styles.img}/>
+        <div className={styles.address}>@ziabrovaa</div>
       </span>
     </div>
   );

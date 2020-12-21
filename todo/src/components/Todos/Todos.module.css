@@ -6,6 +6,19 @@
   }
   
   .title {
-    font-family: Helvetica;
+    font-family: 'FreeMono', monospace;
+    font-weight: normal;
     text-align: center;
+  }
+
+  @media (max-width: 505px) {
+    .wrap {
+      width: 400px;
+    }
+  }
+  
+  @media (max-width: 410px) {
+    .wrap {
+      width: 300px;
+    }
   }

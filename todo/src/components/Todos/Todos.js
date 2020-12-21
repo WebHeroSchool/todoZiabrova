@@ -24,17 +24,17 @@ const Todos = () => {
     items: [{
       id: createId(),
       isDone: false,
-      value: 'Работа',
+      value: 'РАБОТА',
       edit: false
     },{
       id: createId(),
       isDone: false,
-      value: 'Приготовление ужина',
+      value: 'ПРИГОТОВЛЕНИЕ УЖИНА',
       edit: false
     },{
       id: createId(),
       isDone: false,
-      value: 'Чтение книги',
+      value: 'ЧТЕНИЕ КНИГИ',
       edit: false
     }],
     filter: 'all',

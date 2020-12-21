@@ -24,7 +24,7 @@ const Item = ({
 
   return (
       <ListItem
-      className={styles.line}
+      className={styles.wrapper}
       ref={innerRef}
       {...provided.draggableProps}
       {...provided.dragHandleProps}>
@@ -37,6 +37,18 @@ const Item = ({
           onClick = {() => onClickDone(id)}
           />
         </ListItemIcon>
+        <div>
+          <button
+            onClick={() => onClickDone(id)}
+            className={
+            classnames({
+              [styles.item]: true,
+              [styles.done]: isDone
+            })
+           }>
+           {value}
+      </button>
+      </div>
           <div
             id="standard-full-width"
             style={{ margin: 8, width: 0 }}
@@ -59,11 +71,6 @@ const Item = ({
                 }
               }
             }
-          />
-          <ListItemText
-            className={styles.text}
-            primary={value}
-            onDoubleClick = { () => onDoubleClickEdit(id) }
           />
         <ListItemSecondaryAction>
           <IconButton

@@ -15,25 +15,19 @@ const App = () => {
     <BrowserRouter>
       <div className={styles.wrap}>
         <Card className={styles.sidebar}>
-          <MenuList style={{display: 'inline-block', width: '100%', verticalAlign: 'top'}}>
-            <Link to='/' className={styles.link}>
-              <MenuItem style={{fontSize: '18px'}}>
+          <MenuList className={styles.menu}>
+            <Link to='/' className={styles.link} activeClassName={styles.active}>
                 Дела
-              </MenuItem>
             </Link>
-            <Link to='/contacts' className={styles.link}>
-              <MenuItem style={{fontSize: '18px'}}>
+            <Link to='/contacts' className={styles.link} activeClassName={styles.active}>
                 Контакты
-              </MenuItem>
             </Link>
-            <Link to='/aboutme' className={styles.link}>
-              <MenuItem style={{fontSize: '18px'}}>
+            <Link to='/aboutme' className={styles.link} activeClassName={styles.active}>
                 Обо мне
-              </MenuItem>
             </Link>
           </MenuList>
           <div className={styles.footer}>
-            <p className={styles.text}>created in</p>
+            <p className={styles.text}>разработано в</p>
             <img className={styles.img} src={'/images/logo.png'} alt='school' />
           </div>
         </Card>
