@@ -1,13 +1,11 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import MenuList from '@material-ui/core/MenuList';
-import MenuItem from '@material-ui/core/MenuItem';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import AboutMe from '../AboutMe/AboutMe';
 import Contacts from '../Contacts/Contacts';
 import Todos from '../Todos/Todos';
 import styles from './App.module.css';
-// import logo from '';
 
 const App = () => {
 
