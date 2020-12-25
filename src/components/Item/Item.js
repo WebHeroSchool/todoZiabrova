@@ -10,8 +10,8 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 const Item = ({
-  value, items, isDone, id, onClickDone, onClickDelete, onDoubleClickEdit,
-  onBlurSave, index, provided, innerRef  }) => {
+  value, isDone, id, onClickDone, onClickDelete,
+  onBlurSave, innerRef  }) => {
 
   const initialState = {
     items: {
