@@ -1,0 +1,24 @@
+.wrap {
+    display: inline-block;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 555px;
+  }
+  
+  .title {
+    font-family: 'FreeMono', monospace;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  @media (max-width: 505px) {
+    .wrap {
+      width: 400px;
+    }
+  }
+  
+  @media (max-width: 410px) {
+    .wrap {
+      width: 300px;
+    }
+  }

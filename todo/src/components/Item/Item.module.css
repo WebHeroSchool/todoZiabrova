@@ -1,0 +1,43 @@
+.wraper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper-button {
+  align-items: center;
+}
+
+.item {
+  font-family: 'FreeMono', monospace;
+  font-weight: 500px;
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.done {
+  font-family: 'FreeMono', monospace;
+  font-weight: normal;
+  text-decoration: line-through;
+}
+
+.item,
+.done {
+  font-size: 17px;
+  font-weight: normal;
+  border: none;
+  cursor: pointer;
+  transition: opacity .5s;
+}
+
+.item:hover,
+.done:hover {
+  opacity: 0.5;
+}
+
+.item:focus,
+.done:focus {
+  outline: none !important;
+}

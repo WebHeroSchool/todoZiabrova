@@ -1,0 +1,21 @@
+.itemNumber {
+    color: #888;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    margin-left: 5px;
+  }
+  
+  .filters {
+    border-radius: 4px;
+    position: absolute;
+    top: -20%;
+    right: 5px;
+  }
+  
+  .filter {
+    font-size: 10px;
+  }
+  
+  footer {
+    position: relative;
+  }

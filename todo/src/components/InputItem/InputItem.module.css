@@ -1,0 +1,15 @@
+.input {
+  width: 70%;
+  text-align: center;
+  font-family: 'FreeMono', monospace;
+  font-weight: normal;
+}
+
+.add {
+  padding-top: 13px!important;
+}
+
+.items {
+    font-family: 'FreeMono', monospace;
+    font-weight: normal;
+}

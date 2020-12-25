@@ -1,0 +1,170 @@
+.container {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  background-color: #ffffff;
+  font-family: 'FreeMono', monospace;
+  font-weight: 500px;
+}
+
+.loader {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-self: center;
+  width: 150px;
+  height: 150px;
+}
+
+.title {
+  font-family: 'FreeMono', monospace;
+  font-weight: 500px;
+}
+.main {
+  display: flex;
+  align-items: center;
+}
+.photo {
+  display: flex;
+  justify-content: center;
+}
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.description, .indification,
+.login, .url {
+  font-family: 'FreeMono', monospace;
+  font-weight: normal;
+  padding-left: 30px;
+}
+
+.heading {
+  text-align: center;
+  font-family: 'FreeMono', monospace;
+  font-weight: normal;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.descr {
+  margin-left: 15px;
+  align-self: flex-end;
+}
+
+.naming {
+  text-decoration: none;
+  color: #000;
+  font: 25px/25px 'FreeMono', monospace;
+  font-weight: normal;
+}
+
+.item {
+  display: flex;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background-color: #e5e5e7;
+  padding: 10px 10px;
+  transition: .1s ease;
+}
+.item:hover {
+  border-right: 3px solid #76887f;
+  border-bottom: 3px solid #76887f;
+}
+.error,
+.error_text,
+.error_status {
+  font: 25px/25px 'FreeMono', monospace;
+  font-weight: normal;
+  color: red;
+}
+
+@media (max-width: 1250px) {
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .description, .indification,
+  .login, .url {
+    font: 18px/22px 'FreeMono', monospace;
+    font-weight: normal;
+  }
+
+  .heading {
+    font: 30px/30px 'FreeMono', monospace;
+    font-weight: normal;
+  }  
+
+  .naming {
+    font: 22px/22px 'FreeMono', monospace;
+    font-weight: normal;
+  }
+
+  .error,
+  .error_text,
+  .error_status {
+    font: 22px/22px 'FreeMono', monospace;
+    font-weight: normal;
+  }
+}
+
+@media (max-width: 1050px) {
+  .container {
+    width: 70%;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+    margin-left: 30px;
+  }
+
+  .points {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item {
+    margin-bottom: 15px;
+  }
+
+  .description, .indification,
+  .login, .url {
+    font: 18px/18px 'FreeMono', monospace;
+    font-weight: normal;
+  }
+
+  .heading {
+    font: 25px/25px 'FreeMono', monospace;
+    font-weight: normal;
+  }
+
+  .error,
+  .error_text,
+  .error_status {
+    font: 22px/22px 'FreeMono', monospace;
+    font-weight: normal;
+  }
+}
+
+@media (max-width: 869px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 780px) {
+  .container {
+    width: 90%;
+  }
+}
+  

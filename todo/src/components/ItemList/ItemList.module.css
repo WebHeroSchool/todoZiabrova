@@ -1,0 +1,14 @@
+ul {
+  padding-left: 0;
+  font-family: 'FreeMono', monospace;
+  font-weight: normal;
+}
+
+li {
+  padding-top: 10px;
+  list-style-type: none;
+}
+
+.wrap {
+  margin-top: 0;
+}
