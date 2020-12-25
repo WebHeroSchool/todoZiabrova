@@ -6,9 +6,9 @@ import AboutMe from '../AboutMe/AboutMe';
 import Contacts from '../Contacts/Contacts';
 import Todos from '../Todos/Todos';
 import styles from './App.module.css';
+import logo from './img/logo.png'
 
 const App = () => {
-
   return(
     <BrowserRouter>
       <div className={styles.wrap}>
@@ -26,7 +26,7 @@ const App = () => {
           </MenuList>
           <div className={styles.footer}>
             <p className={styles.text}>разработано в</p>
-            <img className={styles.img} src={'/images/logo.png'} alt='school' />
+            <img className={styles.img} src={logo} alt='school' />
           </div>
         </Card>
 

@@ -1,5 +1,10 @@
 # Getting Started with Create React App
 
+Hello! This is my final project at WebHeroSchool. This is an application that allows you to create your own todo list. The application has a tab for my personal page with data and contacts, as well as links to Github repositories.
+
+The published version of the project can be seen here:
+(https://webheroschool.github.io/todoZiabrova/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
